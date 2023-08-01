@@ -22,8 +22,7 @@ Now that you have your own copy of the repository, it's time to create a new Mar
 
 In the newly created Markdown file, document your learning experience using the following format:
 
-\`\`\`markdown
-
+```markdown
 # Learning Entry - Date
 
 ## Type of Learning: [Snippet / Learning / Tool / Language]
@@ -31,7 +30,7 @@ In the newly created Markdown file, document your learning experience using the 
 ### What I've Learned:
 
 [Write here what you've learned during your study, experiment, or exploration. Be as detailed and informative as possible.]
-\`\`\`
+```
 
 Replace \`[Snippet / Learning / Tool / Language]\` with the specific type of learning you had. For example, if you learned a new programming language, you can replace it with "Language." If it's a useful code snippet you discovered, use "Snippet," and so on.
 
@@ -39,9 +38,9 @@ Replace \`[Snippet / Learning / Tool / Language]\` with the specific type of lea
 
 Before pushing your changes to your forked repository, create a new branch with a descriptive name that indicates the type of learning and what it is about. Follow this naming convention:
 
-\`\`\`
+```
 {type of learning}/{what it is}
-\`\`\`
+```
 
 For example, if you learned a new Python library, your branch name could be \`learning/python-library\`. This naming convention will help keep the repository organized and make it easier for others to find relevant entries.
 
