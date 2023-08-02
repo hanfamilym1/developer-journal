@@ -25,7 +25,7 @@ In the newly created Markdown file, document your learning experience using the 
 ```markdown
 # Learning Entry - Date
 
-## Type of Learning: [Snippet / Learning / Tool / Language]
+## Type of Learning: [Snippet / Learning / Tool / Language / Win / Bragging]
 
 ### What I've Learned:
 
