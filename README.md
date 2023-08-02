@@ -12,11 +12,17 @@ To get started, you need to fork the original repository. Follow these steps:
 
 ## Step 2: Create a New Markdown File
 
-Now that you have your own copy of the repository, it's time to create a new Markdown file for your learning entry. Follow these steps:
+Now that you have your own copy of the repository, it's time to create a new Markdown file for your learning entry.
 
-1. Navigate to the `2023` folder in your forked repository.
-2. Inside the `2023` folder, create a subfolder with the correct month (e.g., `August`) for your entry.
-3. Inside the month's subfolder, create a new Markdown file. The file name should be descriptive and concise, preferably including the date of your learning (e.g., `2023-08-01_Learning-Snippet.md`).
+Run
+
+```
+npm run generate insert_title
+```
+
+insert_title = whatever will help you remember the initial title that you'd like to have as a keyword
+
+This will generate the new markdown file in the correct space.
 
 ## Step 3: Document Your Learning
 
