@@ -17,6 +17,9 @@ jobs:
         with:
           node-version: "14" # You can change the Node.js version as needed
 
+      - name: Install Dependencies
+        run: npm install
+
       - name: Run JavaScript Script
         run: |
           node updateBadges.js "${{ secrets.OWNER }}" "${{ secrets.NAME }}" "${{ secrets.ACCESS_TOKEN }}"
