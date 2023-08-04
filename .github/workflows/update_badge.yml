@@ -19,7 +19,7 @@ jobs:
 
       - name: Run JavaScript Script
         run: |
-          node updateBadges.js
+          node updateBadges.js "${{ secrets.OWNER }}" "${{ secrets.NAME }}" "${{ secrets.ACCESS_TOKEN }}"
 
       - name: Commit and Push Changes
         run: |

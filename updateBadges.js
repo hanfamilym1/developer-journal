@@ -4,11 +4,8 @@ const fs = require("fs");
 require("dotenv").config();
 
 const labels = ["learning", "snippet", "tool", "language", "wins", "brag"];
-const repoOwner = process.env.REPO_OWNER;
-const repoName = process.env.REPO_NAME;
-const accessToken = process.env.ACCESS_TOKEN;
 
-async function fetchClosedPRCount(label) {
+async function fetchClosedPRCount(owner, name, label, accessToken) {
   const query = `
     {
       repository(owner: "${repoOwner}", name: "${repoName}") {
@@ -38,7 +35,7 @@ async function fetchClosedPRCount(label) {
   return response.data.data.repository.pullRequests.totalCount;
 }
 
-async function updateBadges() {
+async function updateBadges(owner, name, accessToken) {
   const badgeUrls = await Promise.all(
     labels.map(async (label) => {
       const count = await fetchClosedPRCount(label);
@@ -65,4 +62,8 @@ async function updateBadges() {
   fs.writeFileSync(readmePath, updatedReadmeContent, "utf8");
 }
 
-updateBadges();
+const owner = process.argv[2];
+const name = process.argv[3];
+const accessToken = process.argv[4];
+
+updateBadges(owner, name, accessToken);
