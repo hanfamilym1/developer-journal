@@ -31,7 +31,9 @@ jobs:
 
       - name: Check for Changes
         run: |
-          git diff --exit-code || git commit -m "Update badge" README.md
+          if [ -f changes-detected ]; then
+            git diff --exit-code -- README.md || git commit -m "Update badge" README.md
+          fi
 
       - name: Push Changes
         run: |
