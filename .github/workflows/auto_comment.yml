@@ -1,0 +1,22 @@
+name: Auto Comment on PR Merge
+on:
+  pull_request:
+    types:
+      - closed
+
+jobs:
+  auto_comment:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check if the PR was merged
+        if: github.event.pull_request.merged == true
+        run: |
+          PR_NUMBER=$(jq -r .pull_request.number "$GITHUB_EVENT_PATH")
+          PR_URL=$(jq -r .pull_request.html_url "$GITHUB_EVENT_PATH")
+          COMMENT_BODY="Thanks for merging this pull request! You can view the changes in the [code page](${PR_URL})."
+          GITHUB_TOKEN="${{ secrets.GITHUB_TOKEN }}"
+          REPO_FULLNAME="${{ github.repository }}"
+
+          # Comment on the PR
+          curl -X POST -H "Authorization: token $GITHUB_TOKEN" -d "{\"body\":\"$COMMENT_BODY\"}" "https://api.github.com/repos/$REPO_FULLNAME/issues/$PR_NUMBER/comments"
