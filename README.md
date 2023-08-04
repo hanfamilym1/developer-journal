@@ -1,4 +1,11 @@
-# How to Utilize the Repository
+# Developer Journal
+
+![learning](https://img.shields.io/badge/learning-2-blue)
+![snippet](https://img.shields.io/badge/snippet-1-blue)
+![tool](https://img.shields.io/badge/tool-0-blue)
+![language](https://img.shields.io/badge/language-0-blue)
+![wins](https://img.shields.io/badge/wins-0-blue)
+![brag](https://img.shields.io/badge/brag-0-blue)
 
 Thank you for your interest in utilizing this repository! This guide will walk you through the process of forking the repo, creating a Markdown file for your learning entry, and contributing it back to the repository while following the required guidelines.
 
