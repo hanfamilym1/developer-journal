@@ -1,0 +1,30 @@
+name: Update Badge
+
+on:
+  push:
+    branches:
+      - main # Change this to your default branch name
+
+jobs:
+  updateBadge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14" # You can change the Node.js version as needed
+
+      - name: Run JavaScript Script
+        run: |
+          node updateBadges.js "${{ secrets.OWNER }}" "${{ secrets.NAME }}" "${{ secrets.ACCESS_TOKEN }}"
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@users.noreply.github.com"
+          git add README.md
+          git commit -m "Update badge"
+          git push
