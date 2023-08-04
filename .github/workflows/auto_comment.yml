@@ -14,9 +14,19 @@ jobs:
         run: |
           PR_NUMBER=$(jq -r .pull_request.number "$GITHUB_EVENT_PATH")
           PR_URL=$(jq -r .pull_request.html_url "$GITHUB_EVENT_PATH")
-          COMMENT_BODY="Thanks for merging this pull request! You can view the changes in the [code page](${PR_URL})."
           GITHUB_TOKEN="${{ secrets.GITHUB_TOKEN }}"
           REPO_FULLNAME="${{ github.repository }}"
+
+          # Fetch the list of changed files in the PR
+          FILES_CHANGED=$(curl -s -H "Authorization: token $GITHUB_TOKEN" "https://api.github.com/repos/$REPO_FULLNAME/pulls/$PR_NUMBER/files" | jq -r '.[].filename')
+
+          COMMENT_BODY="Thanks for merging this pull request! The following files were changed:\n"
+
+          # Construct links to the changed files
+          for FILE_CHANGED in $FILES_CHANGED; do
+            FILE_URL="https://github.com/$REPO_FULLNAME/blob/master/$FILE_CHANGED"
+            COMMENT_BODY+="\n- [${FILE_CHANGED}]($FILE_URL)"
+          done
 
           # Comment on the PR
           curl -X POST -H "Authorization: token $GITHUB_TOKEN" -d "{\"body\":\"$COMMENT_BODY\"}" "https://api.github.com/repos/$REPO_FULLNAME/issues/$PR_NUMBER/comments"
