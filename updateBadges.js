@@ -6,39 +6,39 @@ require("dotenv").config();
 const labels = ["learning", "snippet", "tool", "language", "wins", "brag"];
 
 async function fetchClosedPRCount(owner, name, label, accessToken) {
-  const query = `
-    {
-      repository(owner: "${owner}", name: "${name}") {
-        pullRequests(states: MERGED, labels: ["${label}"]) {
-          totalCount
+  try {
+    const query = `
+      {
+        repository(owner: "${owner}", name: "${name}") {
+          pullRequests(states: MERGED, labels: ["${label}"]) {
+            totalCount
+          }
         }
       }
-    }
-  `;
+    `;
 
-  const response = await axios.post(
-    "https://api.github.com/graphql",
-    {
-      query,
-    },
-    {
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
+    const response = await axios.post(
+      "https://api.github.com/graphql",
+      {
+        query,
       },
-    }
-  );
-  console.log(
-    "label",
-    label,
-    response.data.data.repository.pullRequests.totalCount
-  );
-  return response.data.data.repository.pullRequests.totalCount;
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      }
+    );
+
+    return response.data.data.repository.pullRequests.totalCount;
+  } catch (e) {
+    console.error(e);
+  }
 }
 
 async function updateBadges(owner, name, accessToken) {
   const badgeUrls = await Promise.all(
     labels.map(async (label) => {
-      const count = await fetchClosedPRCount(label);
+      const count = await fetchClosedPRCount(owner, name, label, accessToken);
       return `https://img.shields.io/badge/${label.replace(
         /\s/g,
         "%20"
