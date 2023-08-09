@@ -31,10 +31,12 @@ jobs:
 
       - name: Check for Changes
         run: |
-          if [ -f changes-detected ]; then
-            git diff --exit-code -- README.md || git commit -m "Update badge" README.md
+          if git diff --exit-code -- README.md; then
+            echo "No changes detected in README.md"
+          else
+            git config --global user.name "${{ secrets.OWNER }}"
+            git config --global user.email "${{ secrets.EMAIL }}"  # Add your email secret here
+            git add README.md
+            git commit -m "Update badge in README.md"
+            git push
           fi
-
-      - name: Push Changes
-        run: |
-          git push
