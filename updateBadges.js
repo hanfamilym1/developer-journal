@@ -7,7 +7,6 @@ const labels = ["learning", "snippet", "tool", "language", "wins", "brag"];
 
 async function fetchClosedPRCount(owner, name, label, accessToken) {
   try {
-    console.log("owner", owner, name, accessToken);
     const query = `
       {
         repository(owner: "${owner}", name: "${name}") {
@@ -29,10 +28,6 @@ async function fetchClosedPRCount(owner, name, label, accessToken) {
         },
       }
     );
-    console.log(
-      `total count for ${label}`,
-      response.data.data.repository.pullRequests.totalCount
-    );
     return response.data.data.repository.pullRequests.totalCount;
   } catch (e) {
     console.error(e);
@@ -49,13 +44,10 @@ async function updateBadges(owner, name, accessToken) {
       )}-${count}-blue`;
     })
   );
-  console.log("labels", labels);
   const readmePath = "README.md";
   const readmeContent = fs.readFileSync(readmePath, "utf8");
 
   const updatedReadmeContent = labels.reduce((content, label, index) => {
-    console.log("is this label working", label);
-    console.log("this is the content", content);
     const regex = new RegExp(
       `\\[(${label})\\]\\(https://img.shields.io/badge/${label.replace(
         /\s/g,
@@ -65,8 +57,8 @@ async function updateBadges(owner, name, accessToken) {
     return content.replace(regex, `[${label}](${badgeUrls[index]})`);
   }, readmeContent);
 
-  console.log(updatedReadmeContent);
   fs.writeFileSync(readmePath, updatedReadmeContent, "utf8");
+  console.log("successfully wrote the content");
 }
 
 const owner = process.argv[2];
