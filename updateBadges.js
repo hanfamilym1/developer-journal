@@ -29,7 +29,10 @@ async function fetchClosedPRCount(owner, name, label, accessToken) {
         },
       }
     );
-    console.log(response);
+    console.log(
+      `total count for ${label}`,
+      response.data.data.repository.pullRequests.totalCount
+    );
     return response.data.data.repository.pullRequests.totalCount;
   } catch (e) {
     console.error(e);
@@ -46,11 +49,12 @@ async function updateBadges(owner, name, accessToken) {
       )}-${count}-blue`;
     })
   );
-
+  console.log("labels", labels);
   const readmePath = "README.md";
   const readmeContent = fs.readFileSync(readmePath, "utf8");
 
   const updatedReadmeContent = labels.reduce((content, label, index) => {
+    console.log("is this label working", label);
     const regex = new RegExp(
       `\\[(${label})\\]\\(https://img.shields.io/badge/${label.replace(
         /\s/g,
