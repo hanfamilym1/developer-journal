@@ -29,7 +29,7 @@ async function fetchClosedPRCount(owner, name, label, accessToken) {
         },
       }
     );
-
+    console.log(response);
     return response.data.data.repository.pullRequests.totalCount;
   } catch (e) {
     console.error(e);
