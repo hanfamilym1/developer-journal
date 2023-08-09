@@ -55,6 +55,7 @@ async function updateBadges(owner, name, accessToken) {
 
   const updatedReadmeContent = labels.reduce((content, label, index) => {
     console.log("is this label working", label);
+    console.log("this is the content", content);
     const regex = new RegExp(
       `\\[(${label})\\]\\(https://img.shields.io/badge/${label.replace(
         /\s/g,
@@ -64,6 +65,7 @@ async function updateBadges(owner, name, accessToken) {
     return content.replace(regex, `[${label}](${badgeUrls[index]})`);
   }, readmeContent);
 
+  console.log(updatedReadmeContent);
   fs.writeFileSync(readmePath, updatedReadmeContent, "utf8");
 }
 
