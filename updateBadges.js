@@ -7,6 +7,7 @@ const labels = ["learning", "snippet", "tool", "language", "wins", "brag"];
 
 async function fetchClosedPRCount(owner, name, label, accessToken) {
   try {
+    console.log("owner", owner, name, accessToken);
     const query = `
       {
         repository(owner: "${owner}", name: "${name}") {
