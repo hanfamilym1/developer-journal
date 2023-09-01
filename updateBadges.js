@@ -45,7 +45,7 @@ async function updateBadges(owner, name, accessToken) {
       return `https://img.shields.io/badge/${label.replace(
         /\s/g,
         "%20"
-      )}-${count}-${settings.label}`;
+      )}-${count}-${settings[label]}`;
     })
   );
   const readmePath = "README.md";
