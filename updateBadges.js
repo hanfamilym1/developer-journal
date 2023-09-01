@@ -41,6 +41,7 @@ async function updateBadges(owner, name, accessToken) {
   const badgeUrls = await Promise.all(
     labels.map(async (label) => {
       const count = await fetchClosedPRCount(owner, name, label, accessToken);
+      console.log("label", label, "count", count);
       return `https://img.shields.io/badge/${label.replace(
         /\s/g,
         "%20"
@@ -55,7 +56,7 @@ async function updateBadges(owner, name, accessToken) {
       `\\[(${label})\\]\\(https://img.shields.io/badge/${label.replace(
         /\s/g,
         "%20"
-      )}-\\d+-blue\\)`
+      )}-\\d+-${settings.label}\\)`
     );
     return content.replace(regex, `[${label}](${badgeUrls[index]})`);
   }, readmeContent);
