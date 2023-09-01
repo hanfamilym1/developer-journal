@@ -1,9 +1,12 @@
 const axios = require("axios");
 const fs = require("fs");
+const settings = require("./settings.json");
 
 require("dotenv").config();
 
 const labels = ["learning", "snippet", "tool", "language", "wins", "brag"];
+
+console.log("settings", settings);
 
 async function fetchClosedPRCount(owner, name, label, accessToken) {
   try {
@@ -30,7 +33,7 @@ async function fetchClosedPRCount(owner, name, label, accessToken) {
     );
     return response.data.data.repository.pullRequests.totalCount;
   } catch (e) {
-    console.error(e);
+    console.error("e");
   }
 }
 
@@ -41,7 +44,7 @@ async function updateBadges(owner, name, accessToken) {
       return `https://img.shields.io/badge/${label.replace(
         /\s/g,
         "%20"
-      )}-${count}-blue`;
+      )}-${count}-${settings.label}`;
     })
   );
   const readmePath = "README.md";
