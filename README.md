@@ -7,6 +7,7 @@
 ![wins](https://img.shields.io/badge/wins-0-#F1A208)
 ![brag](https://img.shields.io/badge/brag-0-#ECFEAA)
 
+
 Thank you for your interest in utilizing this repository! This guide will walk you through the process of forking the repo, creating a Markdown file for your learning entry, and contributing it back to the repository while following the required guidelines.
 
 ## Step 1: Fork the Repository
