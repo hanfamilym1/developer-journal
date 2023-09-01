@@ -1,10 +1,10 @@
 # Developer Journal
 
-![learning](https://img.shields.io/badge/learning-0-052F5F)
-![snippet](https://img.shields.io/badge/snippet-0-005377)
-![tool](https://img.shields.io/badge/tool-0-06A77D)
+![learning](https://img.shields.io/badge/learning-3-052F5F)
+![snippet](https://img.shields.io/badge/snippet-1-005377)
+![tool](https://img.shields.io/badge/tool-1-06A77D)
 ![language](https://img.shields.io/badge/language-0-D5C67A)
-![wins](https://img.shields.io/badge/wins-0-F1A208)
+![wins](https://img.shields.io/badge/wins-1-F1A208)
 ![brag](https://img.shields.io/badge/brag-0-ECFEAA)
 
 Thank you for your interest in utilizing this repository! This guide will walk you through the process of forking the repo, creating a Markdown file for your learning entry, and contributing it back to the repository while following the required guidelines.
