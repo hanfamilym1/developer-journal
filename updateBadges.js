@@ -56,7 +56,7 @@ async function updateBadges(owner, name, accessToken) {
       `\\[(${label})\\]\\(https://img.shields.io/badge/${label.replace(
         /\s/g,
         "%20"
-      )}-\\d+-${settings.label}\\)`
+      )}-\\d+-${settings[label]}\\)`
     );
     return content.replace(regex, `[${label}](${badgeUrls[index]})`);
   }, readmeContent);
