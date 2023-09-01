@@ -50,7 +50,7 @@ async function updateBadges(owner, name, accessToken) {
   );
   const readmePath = "README.md";
   const readmeContent = fs.readFileSync(readmePath, "utf8");
-
+  console.log("labels", labels);
   const updatedReadmeContent = labels.reduce((content, label, index) => {
     const regex = new RegExp(
       `\\[(${label})\\]\\(https://img.shields.io/badge/${label.replace(
