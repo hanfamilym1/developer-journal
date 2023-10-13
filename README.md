@@ -1,6 +1,6 @@
 # Developer Journal
 
-![learning](https://img.shields.io/badge/learning-3-052F5F)
+![learning](https://img.shields.io/badge/learning-4-052F5F)
 ![snippet](https://img.shields.io/badge/snippet-1-005377)
 ![tool](https://img.shields.io/badge/tool-1-06A77D)
 ![language](https://img.shields.io/badge/language-0-D5C67A)
