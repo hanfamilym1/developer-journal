@@ -1,13 +1,20 @@
 # Developer Journal
 
-[github]: https://github.com/hanfamilym1/developer-journal/pulls?q=is%3Apr+is%3Aclosed+label%3Alanguage
+<!-- Structure should be https://github.com/{owner}/{repoName}/ -->
 
-[![learning](https://img.shields.io/badge/learning-4-052F5F)][github](language)
-![snippet](https://img.shields.io/badge/snippet-3-005377)[]
-![tool](https://img.shields.io/badge/tool-1-06A77D)
-![language](https://img.shields.io/badge/language-0-D5C67A)
-![wins](https://img.shields.io/badge/wins-1-F1A208)
-![brag](https://img.shields.io/badge/brag-0-ECFEAA)
+[github-learning]: https://github.com/hanfamilym1/developer-journal/pulls?q=is%3Apr+is%3Aclosed+label%3Alearning
+[github-language]: https://github.com/hanfamilym1/developer-journal/pulls?q=is%3Apr+is%3Aclosed+label%3Alanguage
+[github-snippet]: https://github.com/hanfamilym1/developer-journal/pulls?q=is%3Apr+is%3Aclosed+label%3Asnippet
+[github-tool]: https://github.com/hanfamilym1/developer-journal/pulls?q=is%3Apr+is%3Aclosed+label%3Atool
+[github-wins]: https://github.com/hanfamilym1/developer-journal/pulls?q=is%3Apr+is%3Aclosed+label%3Awins
+[github-brag]: https://github.com/hanfamilym1/developer-journal/pulls?q=is%3Apr+is%3Aclosed+label%3Abrag
+
+[![learning](https://img.shields.io/badge/learning-4-052F5F)][github-learning]
+[![snippet](https://img.shields.io/badge/snippet-3-005377)][github-snippet]
+[![tool](https://img.shields.io/badge/tool-1-06A77D)][github-tool]
+[![language](https://img.shields.io/badge/language-0-D5C67A)][github-language]
+[![wins](https://img.shields.io/badge/wins-1-F1A208)][github-wins]
+[![brag](https://img.shields.io/badge/brag-0-ECFEAA)][github-brag]
 
 Thank you for your interest in utilizing this repository! This guide will walk you through the process of forking the repo, creating a Markdown file for your learning entry, and contributing it back to the repository while following the required guidelines.
 
