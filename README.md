@@ -1,7 +1,9 @@
 # Developer Journal
 
-![learning](https://img.shields.io/badge/learning-4-052F5F)
-![snippet](https://img.shields.io/badge/snippet-3-005377)
+[github]: https://github.com/hanfamilym1/developer-journal/pulls?q=is%3Apr+is%3Aclosed+label%3Alanguage
+
+[![learning](https://img.shields.io/badge/learning-4-052F5F)][github](language)
+![snippet](https://img.shields.io/badge/snippet-3-005377)[]]
 ![tool](https://img.shields.io/badge/tool-1-06A77D)
 ![language](https://img.shields.io/badge/language-0-D5C67A)
 ![wins](https://img.shields.io/badge/wins-1-F1A208)
