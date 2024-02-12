@@ -11,7 +11,7 @@
 
 [![learning](https://img.shields.io/badge/learning-4-052F5F)][github-learning]
 [![snippet](https://img.shields.io/badge/snippet-3-005377)][github-snippet]
-[![tool](https://img.shields.io/badge/tool-2-06A77D)][github-tool]
+[![tool](https://img.shields.io/badge/tool-3-06A77D)][github-tool]
 [![language](https://img.shields.io/badge/language-0-D5C67A)][github-language]
 [![wins](https://img.shields.io/badge/wins-1-F1A208)][github-wins]
 [![brag](https://img.shields.io/badge/brag-0-ECFEAA)][github-brag]
